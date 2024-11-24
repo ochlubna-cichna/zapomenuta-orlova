@@ -2,20 +2,23 @@
   <main>
     <h1>O projektu</h1>
     <p>
-      Koncept projektu “Zapomenutá Orlová” vznikl na konci roku 2019 a jeho první fáze byla
-      dokončena na jaře 2021. Cílem projektu je zvětšit povědomí o dnes již
-      zapomenutých místech v našem městě, která bývala dříve jeho centrem a
-      pokusit se o zvýšení turismu v Orlové 1. Proto jsme vybrali 12 unikátních
-      historických lokací v této oblasti, které bychom chtěli představit široké
-      veřejnosti.
+      Koncept projektu “Zapomenutá Orlová” vznikl na konci roku 2019 a jeho
+      první fáze byla dokončena na jaře 2021. Cílem projektu je zvětšit povědomí
+      o dnes již zapomenutých místech v našem městě, která bývala dříve jeho
+      centrem a pokusit se o zvýšení turismu v Orlové 1. Proto jsme vybrali 12
+      unikátních historických lokací v této oblasti, které bychom chtěli
+      představit široké veřejnosti.
     </p>
     <p>
       Jedná se o zcela studentský projekt, který bylo možno uskutečnit za pomoci
       participativního rozpočtu Města Orlové.
     </p>
-    <p>V roce 2024 byla stezka pod záštitou spolku <a href="https://orlovanafurt.cz/">Orlová na furt!</a>
-      rozšířena o čtyři další cedule. Rozšíření finančně podpořil spolek <a href="https://orlovanafurt.cz/">Orlová
-        na furt!</a> a Město Orlová.</p>
+    <p>
+      V roce 2024 byla stezka pod záštitou spolku
+      <a href="https://orlovanafurt.cz/">Orlová na furt!</a> rozšířena o čtyři
+      další cedule. Rozšíření finančně podpořil spolek
+      <a href="https://orlovanafurt.cz/">Orlová na furt!</a> a Město Orlová.
+    </p>
 
     <h2>Poděkování</h2>
 
@@ -35,11 +38,15 @@
       neustálou podporu. Všem z vás jsme hluboce zavázáni.
     </p>
 
-    <p>Za pomoc s rozšířením děkujeme <a href="https://www.muzeumct.cz/">Muzeu těšínska</a>, Mgr. Pavlíně Tobolové,
+    <p>
+      Za pomoc s rozšířením děkujeme
+      <a href="https://www.muzeumct.cz/">Muzeu těšínska</a>, Mgr. Pavlíně
+      Tobolové,
       <a href="https://www.msid.cz/">MSID - regionální rozvojová agentura</a>,
       spolku <a href="http://starakarvina.cz/"> Stará Karviná </a>,
       <a href="https://www.facebook.com/reklamkaVaC/">VaC design sro</a>
-      a společnosti <a href="https://www.dpb.cz/">Green Gas DPB, a.s.</a></p>
+      a společnosti <a href="https://www.dpb.cz/">Green Gas DPB, a.s.</a>
+    </p>
 
     <h2>Feedback</h2>
     <p>
