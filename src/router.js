@@ -37,7 +37,7 @@ const routes = [
   },
   {
     path: '/misto/R6',
-    redirect: '/misto/18',
+    redirect: '/misto/19',
   },
   {
     path: '/misto/O1',
