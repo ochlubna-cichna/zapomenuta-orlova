@@ -28,8 +28,24 @@ const routes = [
     redirect: '/misto/15',
   },
   {
+    path: '/misto/R4',
+    redirect: '/misto/17',
+  },
+  {
+    path: '/misto/R5',
+    redirect: '/misto/18',
+  },
+  {
+    path: '/misto/R6',
+    redirect: '/misto/18',
+  },
+  {
     path: '/misto/O1',
     redirect: '/misto/16',
+  },
+  {
+    path: '/misto/O2',
+    redirect: '/misto/20',
   },
   {
     path: '/misto/:index',

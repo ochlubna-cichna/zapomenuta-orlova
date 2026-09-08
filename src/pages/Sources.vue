@@ -60,7 +60,7 @@
               href="https://kolejcieszyn.pl/303c.php?s=orlova"
               target="_blank"
               rel="noopener noreferrer"
-              >Koleje Slaska Cieszynskiego – Orlová</a
+              >Koleje Śląska Cieszyńskiego – Orlová</a
             >
             <a
               href="https://www.zsr.sk/o-nas/historia-zeleznic/prve-zeleznice/prve-zeleznicne-podniky/kosicko-bohuminska-zeleznica/"
@@ -634,6 +634,122 @@
               rel="noopener noreferrer"
               >Německo-česko-ruský hornický a hutnický slovník – Eduard
               Hořovský, 1890</a
+            >
+          </div>
+        </li>
+
+        <li>
+          <button @click="toggleLinks('Orlovská harenda')">
+            <fa
+              :icon="[
+                'fas',
+                toggeledList.includes('Orlovská harenda')
+                  ? 'caret-down'
+                  : 'caret-right',
+              ]"
+            />
+            <h4>Orlovská harenda</h4>
+          </button>
+
+          <div v-show="toggeledList.includes('Orlovská harenda')">
+                        <span
+            >PLAČEK, Vilém (ed.). Orlová 1223-1973: historie a současnost města.
+              Ostrava: Profil, 1973. </span
+            >
+            <a
+              href="https://www.archives.cz/web/soka/karvina/projekt/resources/karvina/Namesti_v_Orlove.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Článek Zemského archivu v Opavě.</a
+            >
+          </div>
+        </li>
+
+        <li>
+          <button @click="toggleLinks('Kino Vlast')">
+            <fa
+              :icon="[
+                'fas',
+                toggeledList.includes('Kino Vlast')
+                  ? 'caret-down'
+                  : 'caret-right',
+              ]"
+            />
+            <h4>Kino Vlast</h4>
+          </button>
+
+          <div v-show="toggeledList.includes('Kino Vlast')">
+                        <span
+                        >PLAČEK, Vilém (ed.). Orlová 1223-1973: historie a současnost města.
+              Ostrava: Profil, 1973. </span
+                        >
+          </div>
+        </li>
+
+        <li>
+          <button @click="toggleLinks('Jáma a kolonie Mühsam')">
+            <fa
+              :icon="[
+                'fas',
+                toggeledList.includes('Jáma a kolonie Mühsam')
+                  ? 'caret-down'
+                  : 'caret-right',
+              ]"
+            />
+            <h4>Jáma a kolonie Mühsam</h4>
+          </button>
+
+          <div v-show="toggeledList.includes('Jáma a kolonie Mühsam')">
+            <span
+            >KOLEKTIV. Uhelné hornictví v ostravsko-karvinském revíru. [s.l.]:
+              Anagram, 2003. ISBN 80-7342-016-3. S. 226.
+            </span
+            >
+            <a
+              href="https://podzemi.solvayovylomy.cz/histhor/lokality/okr/64.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Dějiny dobývání uhlí v Ostravsko-karvinské pánvi - Důl Mühsam</a
+            >
+            <a
+              href="https://www.mesto-orlova.cz/cz/mesto/vzpominkove-dedictvi/38557-jak-se-ilo-v-muhsamu.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Jak se žilo v Muhsamu</a
+            >
+            <a
+              href="https://www.zdarbuh.cz/reviry/okd/jama-muhsam-muhsamschacht-v-orlove/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Jáma Mühsam (Mühsamschacht) v Orlové</a
+            >
+          </div>
+        </li>
+
+        <li>
+          <button @click="toggleLinks('Ateliér Sławiński')">
+            <fa
+              :icon="[
+                'fas',
+                toggeledList.includes('Ateliér Sławiński')
+                  ? 'caret-down'
+                  : 'caret-right',
+              ]"
+            />
+            <h4>Ateliér Sławiński</h4>
+          </button>
+
+          <div v-show="toggeledList.includes('Ateliér Sławiński')">
+            <span
+            >PILAŘ, Vladimír a ŠRÁMEK, František. Umění houslařů.
+              2. vyd., upravené. Praha: Panton, 1989.
+            </span
+            >
+            <a
+              href="https://www.muzeumct.cz/images/casopis-tesinsko/digiarchiv_pdf/Tesinsko_2004_4.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Tři generace houslařů Slawinských z Orlové</a
             >
           </div>
         </li>
