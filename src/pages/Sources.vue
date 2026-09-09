@@ -652,15 +652,15 @@
           </button>
 
           <div v-show="toggeledList.includes('Orlovská harenda')">
-                        <span
-            >PLAČEK, Vilém (ed.). Orlová 1223-1973: historie a současnost města.
-              Ostrava: Profil, 1973. </span
-            >
+            <span
+              >PLAČEK, Vilém (ed.). Orlová 1223-1973: historie a současnost
+              města. Ostrava: Profil, 1973.
+            </span>
             <a
               href="https://www.archives.cz/web/soka/karvina/projekt/resources/karvina/Namesti_v_Orlove.pdf"
               target="_blank"
               rel="noopener noreferrer"
-            >Článek Zemského archivu v Opavě.</a
+              >Článek Zemského archivu v Opavě.</a
             >
           </div>
         </li>
@@ -679,10 +679,10 @@
           </button>
 
           <div v-show="toggeledList.includes('Kino Vlast')">
-                        <span
-                        >PLAČEK, Vilém (ed.). Orlová 1223-1973: historie a současnost města.
-              Ostrava: Profil, 1973. </span
-                        >
+            <span
+              >PLAČEK, Vilém (ed.). Orlová 1223-1973: historie a současnost
+              města. Ostrava: Profil, 1973.
+            </span>
           </div>
         </li>
 
@@ -701,27 +701,26 @@
 
           <div v-show="toggeledList.includes('Jáma a kolonie Mühsam')">
             <span
-            >KOLEKTIV. Uhelné hornictví v ostravsko-karvinském revíru. [s.l.]:
+              >KOLEKTIV. Uhelné hornictví v ostravsko-karvinském revíru. [s.l.]:
               Anagram, 2003. ISBN 80-7342-016-3. S. 226.
-            </span
-            >
+            </span>
             <a
               href="https://podzemi.solvayovylomy.cz/histhor/lokality/okr/64.htm"
               target="_blank"
               rel="noopener noreferrer"
-            >Dějiny dobývání uhlí v Ostravsko-karvinské pánvi - Důl Mühsam</a
+              >Dějiny dobývání uhlí v Ostravsko-karvinské pánvi - Důl Mühsam</a
             >
             <a
               href="https://www.mesto-orlova.cz/cz/mesto/vzpominkove-dedictvi/38557-jak-se-ilo-v-muhsamu.html"
               target="_blank"
               rel="noopener noreferrer"
-            >Jak se žilo v Muhsamu</a
+              >Jak se žilo v Muhsamu</a
             >
             <a
               href="https://www.zdarbuh.cz/reviry/okd/jama-muhsam-muhsamschacht-v-orlove/"
               target="_blank"
               rel="noopener noreferrer"
-            >Jáma Mühsam (Mühsamschacht) v Orlové</a
+              >Jáma Mühsam (Mühsamschacht) v Orlové</a
             >
           </div>
         </li>
@@ -741,15 +740,14 @@
 
           <div v-show="toggeledList.includes('Ateliér Sławiński')">
             <span
-            >PILAŘ, Vladimír a ŠRÁMEK, František. Umění houslařů.
-              2. vyd., upravené. Praha: Panton, 1989.
-            </span
-            >
+              >PILAŘ, Vladimír a ŠRÁMEK, František. Umění houslařů. 2. vyd.,
+              upravené. Praha: Panton, 1989.
+            </span>
             <a
               href="https://www.muzeumct.cz/images/casopis-tesinsko/digiarchiv_pdf/Tesinsko_2004_4.pdf"
               target="_blank"
               rel="noopener noreferrer"
-            >Tři generace houslařů Slawinských z Orlové</a
+              >Tři generace houslařů Slawinských z Orlové</a
             >
           </div>
         </li>
