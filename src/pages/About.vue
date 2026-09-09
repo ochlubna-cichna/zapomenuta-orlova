@@ -75,7 +75,7 @@
     <h2 class="team_h">Náš tým</h2>
     <div class="team flex">
       <span class="member">
-        <img v-lazy="require('@/assets/img/about/Ondra.webp')" alt="" />
+        <img :src="ondraImg" alt="" loading="lazy" />
         <div>
           <b>Ondřej Chlubna</b>
           <i>vedoucí projektu</i>
@@ -88,7 +88,7 @@
         </span>
       </span>
       <span class="member">
-        <img v-lazy="require('@/assets/img/about/Vítek.webp')" alt="" />
+        <img :src="vitekImg" alt="" loading="lazy" />
         <div>
           <b>Vítek Jurčák</b>
           <i>textař/historik</i>
@@ -101,7 +101,7 @@
         </span>
       </span>
       <span class="member">
-        <img v-lazy="require('@/assets/img/about/Avatar.svg')" alt="" />
+        <img :src="avatarImg" alt="" loading="lazy" />
         <div>
           <b>Petr Gajdošík</b>
           <b>(Tarasa24)</b>
@@ -131,7 +131,7 @@
         </span>
       </span>
       <span class="member">
-        <img v-lazy="require('@/assets/img/about/Avatar.svg')" alt="" />
+        <img :src="avatarImg" alt="" loading="lazy" />
         <div>
           <b>Kristýna Kiliková</b>
           <i>grafik</i>
@@ -151,9 +151,15 @@
 
 <script>
 import Media from '../components/Media.vue'
+import ondraImg from '@/assets/img/about/Ondra.webp'
+import vitekImg from '@/assets/img/about/Vítek.webp'
+import avatarImg from '@/assets/img/about/Avatar.svg'
 
 export default {
   components: { Media },
+  data() {
+    return { ondraImg, vitekImg, avatarImg }
+  },
 }
 </script>
 

@@ -3,34 +3,22 @@
     <h1>Instalace</h1>
     <div class="points">
       <div class="point">
-        <img
-          :src="require('@/assets/img/installation/install_1.webp')"
-          alt="Instalace 1"
-        />
+        <img :src="install1" alt="Instalace 1" />
         <i
           >Při prvním otevření vás prohlížeč sám vyzve, abyste si aplikaci
           přidali na plochu.</i
         >
       </div>
       <div class="point">
-        <img
-          :src="require('@/assets/img/installation/install_2.webp')"
-          alt="Instalace 2"
-        />
+        <img :src="install2" alt="Instalace 2" />
         <i>Stejného efektu lze dosáhnout otevřením postranního menu...</i>
       </div>
       <div class="point">
-        <img
-          :src="require('@/assets/img/installation/install_3.webp')"
-          alt="Instalace 3"
-        />
+        <img :src="install3" alt="Instalace 3" />
         <i>... a stisknutím tlačítka "Přidat na plochu".</i>
       </div>
       <div class="point">
-        <img
-          :src="require('@/assets/img/installation/install_4.webp')"
-          alt="Instalace 4"
-        />
+        <img :src="install4" alt="Instalace 4" />
         <i>Svou volbu pak potvrdíte stisknutím tlačítka "Přidat".</i>
       </div>
     </div>
@@ -41,7 +29,16 @@
 </template>
 
 <script>
-export default {}
+import install1 from '@/assets/img/installation/install_1.webp'
+import install2 from '@/assets/img/installation/install_2.webp'
+import install3 from '@/assets/img/installation/install_3.webp'
+import install4 from '@/assets/img/installation/install_4.webp'
+
+export default {
+  data() {
+    return { install1, install2, install3, install4 }
+  },
+}
 </script>
 
 <style lang="sass" scoped>

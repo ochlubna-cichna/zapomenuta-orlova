@@ -1,4 +1,8 @@
 import locations from '../../../src/assets/data/locations.json'
+import {
+  displayLabel,
+  stripLabelPrefix,
+} from '../../../src/assets/js/helperFunctions.js'
 
 function normalize(str) {
   const accent = 'ĚŠČŘŽÝÁÍÉÚŮŇěščřžýáíéúůňł'
@@ -23,8 +27,8 @@ describe('Places pages', () => {
       })
 
       it('Should have correct header, index number and coordinates', () => {
-        cy.get('.head svg>text').should('contain', index + 1)
-        cy.get('.head h1').should('contain', place)
+        cy.get('.head svg>text').should('contain', displayLabel(place, index))
+        cy.get('.head h1').should('contain', stripLabelPrefix(place))
         cy.get('.head i').should('exist')
       })
 

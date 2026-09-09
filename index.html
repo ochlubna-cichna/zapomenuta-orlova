@@ -4,8 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link rel="icon" href="%BASE_URL%favicon.ico" />
     <meta name="description" content="Historická stezka starou Orlovou" />
+    <meta name="theme-color" content="#fcba03" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>Zapomenutá Orlová</title>
   </head>
   <body onload="handleLoad()">
@@ -15,7 +20,7 @@
       </strong>
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <script type="module" src="/src/main.js"></script>
   </body>
   <script>
     function handleLoad() {

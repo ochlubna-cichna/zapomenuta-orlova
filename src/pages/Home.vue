@@ -11,11 +11,7 @@
 
     <section class="segment1 flex">
       <div>
-        <img
-          class="circle-img"
-          v-lazy="require('@/assets/img/logo_bg.webp')"
-          alt=""
-        />
+        <img class="circle-img" :src="logoBg" alt="" loading="lazy" />
         <h1>ZAPOMENUTÁ ORLOVÁ</h1>
         <p>
           Vítejte na webu stezky Zapomenutou Orlovou. Jedná se unikátní projekt
@@ -50,11 +46,7 @@
     />
 
     <section class="flex" id="aplikace">
-      <img
-        class="circle-img"
-        v-lazy="require('@/assets/img/home/download.svg')"
-        alt=""
-      />
+      <img class="circle-img" :src="downloadIcon" alt="" loading="lazy" />
       <div>
         <h2>APLIKACE</h2>
         <p>
@@ -103,8 +95,9 @@
             <span>
               <img
                 class="circle-img"
-                v-lazy="require('@/assets/img/home/geocaching.webp')"
+                :src="geocachingImg"
                 alt="Geocaching"
+                loading="lazy"
               />
               <b>Geocaching</b>
             </span>
@@ -117,8 +110,9 @@
             <span>
               <img
                 class="circle-img"
-                v-lazy="require('@/assets/img/home/munzee.webp')"
+                :src="munzeeImg"
                 alt="Munzee"
+                loading="lazy"
               />
               <b>Munzee</b>
             </span>
@@ -143,11 +137,7 @@
     />
 
     <section class="flex" id="mapa">
-      <img
-        class="circle-img"
-        v-lazy="require('@/assets/img/home/map.svg')"
-        alt="map icon"
-      />
+      <img class="circle-img" :src="mapIcon" alt="map icon" loading="lazy" />
       <div>
         <h2>MAPA</h2>
         <p>
@@ -168,21 +158,36 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import locations from '../assets/data/locations.json'
+import { globFind } from '@/assets/js/helperFunctions.js'
+import logoBg from '@/assets/img/logo_bg.webp'
+import downloadIcon from '@/assets/img/home/download.svg'
+import geocachingImg from '@/assets/img/home/geocaching.webp'
+import munzeeImg from '@/assets/img/home/munzee.webp'
+import mapIcon from '@/assets/img/home/map.svg'
+
+const mainImages = import.meta.glob('@/assets/img/articles/*/main.webp', {
+  eager: true,
+  import: 'default',
+})
 
 export default {
   name: 'Home',
   data() {
     return {
       parallaxArr: [{ src: '', index: '' }],
+      logoBg,
+      downloadIcon,
+      geocachingImg,
+      munzeeImg,
+      mapIcon,
     }
   },
   mounted() {
     let array = this.shuffle(Object.keys(locations))
     for (let i = 0; i < array.length; i++)
       array[i] = {
-        src: require(`@/assets/img/articles/${array[i]}/main.webp`),
+        src: globFind(mainImages, `/${array[i]}/main.webp`),
         index: Object.keys(locations).indexOf(array[i]),
       }
 

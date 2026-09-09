@@ -3,11 +3,7 @@
     <section class="head">
       <img
         class="main_img"
-        :src="
-          place.name
-            ? require(`@/assets/img/articles/${place.name}/main.webp`)
-            : require(`@/assets/img/empty.png`)
-        "
+        :src="place.name ? mainImage : emptyImg"
         alt="background image"
       />
       <div>
@@ -25,7 +21,7 @@
           </text>
         </svg>
         <h1>
-          {{ place.name }}
+          {{ place.name ? stripLabelPrefix(place.name) : '' }}
         </h1>
         <h4>
           <i>{{ convertCoord(place.lat, place.lng) }}</i>
@@ -58,7 +54,7 @@
         >
           <img
             v-for="image in images"
-            :src="require(`@/assets/img/articles/${place.name}/${image.file}`)"
+            :src="globFind(articleImages, `/${place.name}/${image.file}`)"
             :key="image.file"
             :alt="image.alt"
           />
@@ -76,13 +72,32 @@
 
 <script>
 import marked from 'marked'
-import 'viewerjs/dist/viewer.css'
-import Viewer from 'v-viewer'
-import Vue from 'vue'
-Vue.use(Viewer)
-
 import data from '@/assets/data/locations.json'
-import { convertCoord } from '@/assets/js/helperFunctions.js'
+import emptyImg from '@/assets/img/empty.png'
+import {
+  convertCoord,
+  displayLabel,
+  stripLabelPrefix,
+  globFind,
+} from '@/assets/js/helperFunctions.js'
+
+const mainImages = import.meta.glob('@/assets/img/articles/*/main.webp', {
+  eager: true,
+  import: 'default',
+})
+const articleImages = import.meta.glob('@/assets/img/articles/*/*.webp', {
+  eager: true,
+  import: 'default',
+})
+const articleLists = import.meta.glob('@/assets/img/articles/*/list.json', {
+  eager: true,
+  import: 'default',
+})
+const articleTexts = import.meta.glob('@/assets/data/articles/*.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+})
 
 export default {
   components: {},
@@ -92,7 +107,14 @@ export default {
       body: '',
       images: [],
       convertCoord: convertCoord,
+      emptyImg,
+      mainImage: null,
+      articleImages,
     }
+  },
+  methods: {
+    globFind,
+    stripLabelPrefix,
   },
   created() {
     if (
@@ -104,11 +126,11 @@ export default {
       this.place = details
 
       this.place.name = name
-      this.place.nth = this.$route.params.index
+      this.place.nth = displayLabel(name, this.$route.params.index - 1)
 
-      const md = marked(
-        require(`@/assets/data/articles/${this.place.name}.md`).default
-      )
+      this.mainImage = globFind(mainImages, `/${this.place.name}/main.webp`)
+
+      const md = marked(globFind(articleTexts, `/${this.place.name}.md`))
       const re = /<a href="\/misto\/.+">(.+)<\/a>/g
       this.body = md.replaceAll(
         re,
@@ -122,7 +144,7 @@ export default {
       `
       )
 
-      this.images = require(`@/assets/img/articles/${this.place.name}/list.json`)
+      this.images = globFind(articleLists, `/${this.place.name}/list.json`)
     }
   },
 }

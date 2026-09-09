@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <Nav />
-    <vue-page-transition name="fade">
-      <router-view />
-    </vue-page-transition>
+    <router-view v-slot="{ Component }">
+      <Transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </Transition>
+    </router-view>
     <Update />
     <GDPR />
   </div>
@@ -39,6 +41,12 @@ export default {
 </script>
 
 <style lang="sass">
+.fade-enter-active, .fade-leave-active
+  transition: opacity .25s ease
+
+.fade-enter-from, .fade-leave-to
+  opacity: 0
+
 #app
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased

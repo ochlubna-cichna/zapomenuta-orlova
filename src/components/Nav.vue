@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/" class="logo">
-      <img class="logo" v-lazy="require('@/assets/img/logo.webp')" alt="logo" />
+      <img class="logo" :src="logo" alt="logo" loading="lazy" />
     </router-link>
 
     <router-link
@@ -29,19 +29,21 @@
       rel="noopener noreferrer"
       class="orlova"
     >
-      <img
-        v-lazy="require('@/assets/img/orlova.webp')"
-        alt="Město Orlová logo"
-      />
+      <img :src="orlova" alt="Město Orlová logo" loading="lazy" />
     </a>
   </nav>
 </template>
 
 <script>
+import logo from '@/assets/img/logo.webp'
+import orlova from '@/assets/img/orlova.webp'
+
 export default {
   data() {
     return {
       path: undefined,
+      logo,
+      orlova,
     }
   },
   watch: {

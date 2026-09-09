@@ -1,4 +1,4 @@
-var targetCache = [
+export const targetCache = [
   'https://a.tile.openstreetmap.org/12/2257/1391.png',
   'https://a.tile.openstreetmap.org/13/4515/2783.png',
   'https://a.tile.openstreetmap.org/14/9030/5566.png',

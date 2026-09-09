@@ -1,5 +1,38 @@
 import locations from '../../../src/assets/data/locations.json'
 
+// Mirrors Map.vue's `sortedForDisplay` computed: sidebar is sorted for
+// display (1-12 in original order, then R/O prefixed places grouped by
+// letter — R before O — and ascending number) while the underlying
+// place/index/URL mapping stays untouched.
+function displayOrderedNames() {
+  const letterRank = { R: 0, O: 1 }
+  const names = Object.keys(locations)
+
+  return names
+    .map((name, index) => ({ name, index }))
+    .sort((a, b) => {
+      const aExtra = a.index >= 12
+      const bExtra = b.index >= 12
+
+      if (!aExtra && !bExtra) return a.index - b.index
+      if (!aExtra) return -1
+      if (!bExtra) return 1
+
+      const aMatch = a.name.match(/^([A-Z])(\d+)\./)
+      const bMatch = b.name.match(/^([A-Z])(\d+)\./)
+      const aLetter = aMatch ? aMatch[1] : ''
+      const bLetter = bMatch ? bMatch[1] : ''
+
+      if (aLetter !== bLetter)
+        return (letterRank[aLetter] ?? 99) - (letterRank[bLetter] ?? 99)
+
+      const aNum = aMatch ? parseInt(aMatch[2], 10) : 0
+      const bNum = bMatch ? parseInt(bMatch[2], 10) : 0
+      return aNum - bNum
+    })
+    .map(({ name }) => name)
+}
+
 describe('Map page', () => {
   before(() => {
     cy.visit('/mapa')
@@ -11,10 +44,27 @@ describe('Map page', () => {
         .children()
         .should('have.length', Object.keys(locations).length)
 
+      const expectedOrder = displayOrderedNames()
+
       cy.get('aside ol')
         .children()
         .each(($el, index) => {
-          expect($el).to.contain(Object.keys(locations)[index])
+          expect($el).to.contain(expectedOrder[index])
+        })
+    })
+
+    it('Should link each item to its true original index (URL mapping unaffected by display sort)', () => {
+      const expectedOrder = displayOrderedNames()
+      const names = Object.keys(locations)
+
+      cy.get('aside ol')
+        .children()
+        .each(($el, displayIndex) => {
+          const trueIndex = names.indexOf(expectedOrder[displayIndex])
+          cy.wrap($el)
+            .find('a')
+            .should('have.attr', 'href')
+            .and('include', `/misto/${trueIndex + 1}`)
         })
     })
 

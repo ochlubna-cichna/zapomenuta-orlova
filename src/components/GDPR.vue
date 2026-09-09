@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { bootstrap } from 'vue-gtag'
+import { addGtag } from 'vue-gtag'
 
 export default {
   data() {
@@ -33,7 +33,7 @@ export default {
       if (b) this.enablePlugin()
     },
     enablePlugin() {
-      bootstrap().then((gtag) => {})
+      addGtag()
     },
   },
 }

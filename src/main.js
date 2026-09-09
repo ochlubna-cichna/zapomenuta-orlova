@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router.js'
@@ -15,9 +15,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import VuePageTransition from 'vue-page-transition'
-import VueLazyload from 'vue-lazyload'
-import VueGtag from 'vue-gtag'
+import { createGtag } from 'vue-gtag'
+import VueViewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
 
 let id
 switch (window.location.hostname) {
@@ -28,11 +28,6 @@ switch (window.location.hostname) {
     id = 'G-1BM9VV7LGZ'
     break
 }
-
-Vue.use(VueGtag, {
-  config: { id: id },
-  bootstrap: false,
-})
 
 library.add(
   faMapMarkerAlt,
@@ -46,17 +41,19 @@ library.add(
   faCaretDown,
   faExternalLinkAlt
 )
-Vue.component('fa', FontAwesomeIcon)
-Vue.use(VuePageTransition)
-Vue.use(VueLazyload, {
-  loading: require('./assets/img/loading.svg'),
-})
 
 import 'leaflet/dist/leaflet.css'
 
-Vue.config.productionTip = false
+const app = createApp(App)
 
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount('#app')
+app.use(router)
+app.use(
+  createGtag({
+    tagId: id,
+    initMode: 'manual',
+  })
+)
+app.use(VueViewer)
+app.component('fa', FontAwesomeIcon)
+
+app.mount('#app')
