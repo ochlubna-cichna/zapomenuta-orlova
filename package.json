@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "test": "npm run test:e2e && prettier --check .",
-    "test:e2e": "start-server-and-test preview http://localhost:4173 cy:run",
+    "test:e2e": "npm run build && start-server-and-test preview http://localhost:4173 cy:run",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test:prettier": "prettier --check ."
